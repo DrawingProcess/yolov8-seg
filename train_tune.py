@@ -5,4 +5,4 @@ from ultralytics import YOLO
 model = YOLO("yolov8n-seg.pt")  # load a pretrained model (recommended for training)
 
 # Use the model
-model.tune(data='./data.yaml', epochs=2000, iterations=200, plots=True, save=True, val=False)
+model.tune(data='./data.yaml', epochs=300,  iterations=1, plots=True, save=True, val=True)
