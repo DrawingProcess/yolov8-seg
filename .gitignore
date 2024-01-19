@@ -2,4 +2,6 @@ ultralytics/
 
 runs/
 
+data.yaml
+
 *.pt
