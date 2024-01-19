@@ -390,7 +390,11 @@ if __name__ == "__main__":
 
     if source == "COCO":
         convert_coco_json(
+<<<<<<< HEAD
             "C:/Users/USER/yolov8/train_exd_yolo/",  # directory with *.json
+=======
+            "../../dataset/train_exd_yolo/",  # directory with *.json
+>>>>>>> b87f6655ca95f0a6ba632c1c1ba25cb118c30c71
             use_segments=True,
             cls91to80=True,
         )
