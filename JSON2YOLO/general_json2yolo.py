@@ -289,7 +289,8 @@ def convert_coco_json(json_dir="../coco/annotations/", use_segments=False, cls91
                 if box[2] <= 0 or box[3] <= 0:  # if w <= 0 and h <= 0
                     continue
 
-                cls = coco80[ann["category_id"] - 1] if cls91to80 else ann["category_id"] - 1  # class
+                # cls = coco80[ann["category_id"] - 1] if cls91to80 else ann["category_id"] - 1  # class
+                cls = ann["category_id"]
                 box = [cls] + box.tolist()
                 if box not in bboxes:
                     bboxes.append(box)
@@ -306,7 +307,7 @@ def convert_coco_json(json_dir="../coco/annotations/", use_segments=False, cls91
                         segments.append(s)
 
             # Write
-            with open((fn / f).with_suffix(".txt"), "a") as file:
+            with open((fn / f).with_suffix(".txt"), "w") as file:
                 for i in range(len(bboxes)):
                     line = (*(segments[i] if use_segments else bboxes[i]),)  # cls, box or segments
                     file.write(("%g " * len(line)).rstrip() % line + "\n")
@@ -390,11 +391,7 @@ if __name__ == "__main__":
 
     if source == "COCO":
         convert_coco_json(
-<<<<<<< HEAD
-            "C:/Users/USER/yolov8/train_exd_yolo/",  # directory with *.json
-=======
-            "../../dataset/train_exd_yolo/",  # directory with *.json
->>>>>>> b87f6655ca95f0a6ba632c1c1ba25cb118c30c71
+            "C:/Users/USER/yolov8_2024/train_exd_yolo/",  # directory with *.json
             use_segments=True,
             cls91to80=True,
         )
