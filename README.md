@@ -13,3 +13,6 @@
 4. train.py 
     - Modify: dataset path
     - Execute: python train.py
+
+## Notice
+If you'll train with the same dataget again, you need to delete cache
