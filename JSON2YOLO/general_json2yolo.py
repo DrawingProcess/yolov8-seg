@@ -393,7 +393,7 @@ if __name__ == "__main__":
         convert_coco_json(
             "C:/Users/USER/yolov8_2024/train_exd_yolo/",  # directory with *.json
             use_segments=True,
-            cls91to80=True,
+            cls91to80=True, #True
         )
 
     elif source == "infolks":  # Infolks https://infolks.info/
